@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerCaught : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class PlayerCaught : MonoBehaviour
             // Here you can add code to handle what happens when the player is caught, e.g., reset the level, show a game over screen, etc.
             // For example, you could reload the current scene:
             // UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+
+            // Load Game Over Scene
+            SceneManager.LoadScene("Game Over");
         }
     }
 
