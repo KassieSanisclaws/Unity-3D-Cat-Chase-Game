@@ -23,6 +23,7 @@ sysinfo.txt
 *.pidb
 *.booproj
 *.svd
+*.vs/
 
 # Unity Package Manager
 Packages/packages-lock.json
