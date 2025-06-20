@@ -7,6 +7,12 @@ TagManager:
   - Goal
   - Enemy
   - OutOfBounds
+  - FallingTrap
+  - TrapTrigger
+  - FxTemporaire
+  - Obstacle
+  - Obstcales
+  - GravityZone
   layers:
   - Default
   - TransparentFX
