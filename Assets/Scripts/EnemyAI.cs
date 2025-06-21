@@ -23,6 +23,7 @@ public class EnemyAI : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         currState = EnemyState.Patrolling;
+        currPatrolIndx = Random.Range(0, patrolPoints.Length); // NEW: randomize starting patrol point
         GotoNextPatrolPoint();
     }
 
@@ -71,5 +72,19 @@ public class EnemyAI : MonoBehaviour
             return hit.collider.CompareTag("Player");
         }
         return false;
+    }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        if (patrolPoints != null && patrolPoints.Length > 1)
+        {
+            for (int i = 0; i < patrolPoints.Length; i++)
+            {
+                Vector3 current = patrolPoints[i].position;
+                Vector3 next = patrolPoints[(i + 1) % patrolPoints.Length].position;
+                Gizmos.DrawLine(current, next);
+                Gizmos.DrawSphere(current, 0.3f);
+            }
+        }
     }
 }
